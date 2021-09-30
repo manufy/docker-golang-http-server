@@ -1,10 +1,25 @@
 # iron/go:dev is the alpine image with the go tools added
-FROM iron/go:dev
+
+FROM golang:1.14.2
 WORKDIR /app
+
 # Set an env var that matches your github repo name, replace treeder/dockergo here with your repo name
-ENV SRC_DIR=/go/src/github.com/treeder/dockergo/
 # Add the source code:
-ADD . /static
+
+ADD . /dist
+COPY server.go /app
+
+
+
+
+
+RUN git config --global http.sslVerify false
+RUN go mod init mfy/server
+RUN go get  github.com/gin-gonic/gin
 # Build it:
-RUN cd static; go build -o myapp; cp myapp /app/
-ENTRYPOINT ["./myapp"]
+
+RUN go build
+EXPOSE 5000
+
+
+ENTRYPOINT ["./server"]
