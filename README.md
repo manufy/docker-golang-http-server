@@ -26,23 +26,23 @@ This script will serve thedownload libraries, and assure that no go.mod and go.s
 
 1. First, declare package:
 
-    package main
+        package main
 
 2. Second, add to server.go source code.
 
-    import (
-	"net/http"
-	"github.com/gin-gonic/gin"
-)
+        import (
+        "net/http"
+        "github.com/gin-gonic/gin"
+        )
 
 3. static files are served as defined in server.go 
 
-    func main() {
-        gin.ForceConsoleColor()
-        router := gin.Default()
-        router.StaticFS("/", http.Dir("dist"))
-        router.Run(":5000")
-    }
+        func main() {
+            gin.ForceConsoleColor()
+            router := gin.Default()
+            router.StaticFS("/", http.Dir("dist"))
+            router.Run(":5000")
+        }
 
 ## Running app at local environment
 
@@ -56,13 +56,13 @@ Static files from dist directory are served
 
  1. Execute this script and access http://localhost:5000
 
-    build_docker_server.sh
+        build_docker_server.sh
 
 
 ## Execute docker image containing the app exposing at port 5000
 
 1. Execute this script and access http://localhost:5000
 
-    run_docker_server.sh 
+        run_docker_server.sh 
 
 
