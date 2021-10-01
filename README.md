@@ -19,7 +19,7 @@ This is a golang server for use in frontend projects. I will serve the dist dire
 2. Execute server with 
 
         ./server
-# Server.go explanation
+## Server.go explanation
 
 1. First, declare package:
 
@@ -41,14 +41,6 @@ This is a golang server for use in frontend projects. I will serve the dist dire
             router.Run(":5000")
         }
 
-## Running app at local environment
-
- 1. Execute this script and access http://localhost:5000
- 
-        run_local_server.sh
-
-
-Static files from dist directory are served
 ## Build a docker image containing the app at /dist
 
  1. Execute this script and access http://localhost:5000
