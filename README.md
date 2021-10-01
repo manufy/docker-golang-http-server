@@ -38,13 +38,14 @@ First, download libraries, and assure that no go.mod and go.sum files exist at r
 
 ## Running app at local environment
 
-    Execute serve.sh
+    Execute run_local_server.sh
     access http://localhost:5000
     Static files from dist directory are served
 ## Build a docker image containing the app at /dist
 
-    build_docker.sh
+    build_docker_server.sh
     access http://localhost:5000
 ## Execute docker image containing the app exposing at port 5000
 
-    run_docker_serve.sh 
+    run_docker_server.sh 
+    access http://localhost:5000
