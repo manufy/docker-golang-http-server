@@ -4,6 +4,10 @@ golang http server
 
 This project serves as scaffold to buid a dockerimage running any frontend project (vue, angular, react, svelte ...) and serve it into a running docker container.
 
+Use cases:
+
+        - You have a web app in a modern framework (react, vue svelte, angular) bulding a dist directotry and you want a minimal container with an http server to expose it.
+
 # Prerequisites
 
     Docker and go installed 
