@@ -10,7 +10,7 @@ This project serves as scaffold to buid a dockerimage running any frontend proje
 # Objectives
 
 This is a golang server for use in frontend projects. I will serve the dist directory using gin gonic library for goland in a docker container, ready to be deployed to a production environment.
-## Golang project initializacion (only needed on blank project, not required if downloaded from repo)
+## Golang project initializacion 
 
 1. Execute init_go_server.sh
 
