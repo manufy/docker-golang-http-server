@@ -2,29 +2,49 @@
 
 golang http server
 
+This project servers as scaffold to buid a dockerimage running any frontend project (vue, angular, react, svelte ...) and serve it into a running docker container.
+
 # Objectives
 
 This is a golang server for use in frontend projects. I will serve the dist directory using gin gonic library for goland in a docker container, ready to be deployed to a production environment.
-## Project initializacion (not required if downloaded from repo)
+## Golang project initializacion (only needed on blank project, not required if downloaded from repo)
 
-First, download libraries.
+First, download libraries, and assure that no go.mod and go.sum files exist at root level.
 
-    go mod init mfy/server -> install golang libs
-    go get -u github.com/gin-gonic/gin
+    go mod init mfy/server -> init golang server project
+    go get -u github.com/gin-gonic/gin -> get gin libraries used to serve http
 
-Second, add to source code.
+# Server.go explanation
 
-    import "github.com/gin-gonic/gin"
-    import "net/http"
+1. First, declare package:
 
-## Run app at http://localhost:5000/server
+    package main
+
+2. Second, add to server.go source code.
+
+    import (
+	"net/http"
+	"github.com/gin-gonic/gin"
+)
+
+3. static files are served as defined in server.go 
+
+    func main() {
+        gin.ForceConsoleColor()
+        router := gin.Default()
+        router.StaticFS("/", http.Dir("dist"))
+        router.Run(":5000")
+    }
+
+## Running app at local environment
 
     Execute serve.sh
+    access http://localhost:5000
+    Static files from dist directory are served
+## Build a docker image containing the app at /dist
 
-## Build mfy/golang-server
+    build_docker.sh
+    access http://localhost:5000
+## Execute docker image containing the app exposing at port 5000
 
-    Execute build_docker.sh
-## Scripts
-
-build_docker.sh -> build container serving app at internal port 5000
-serve.sh -> run server at port 5000
+    run_docker_serve.sh 
