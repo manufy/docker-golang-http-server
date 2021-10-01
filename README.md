@@ -14,7 +14,7 @@ This is a golang server for use in frontend projects. I will serve the dist dire
 
 1. clone project and execute 
 
-        build_all.sh
+        ./build_all.sh
 
 2. Execute server with 
 
@@ -45,13 +45,15 @@ This is a golang server for use in frontend projects. I will serve the dist dire
 
  1. Execute this script and access http://localhost:5000
 
-        build_docker_server.sh
+        ./build_docker_server.sh
 
 
-## Execute docker image containing the app exposing at port 5000
+## Execute docker image containing the app at /dist and exposing at port 5000
 
 1. Execute this script and access http://localhost:5000
 
-        run_docker_server.sh 
+        ./run_docker_server.sh 
+
+Manuel Fernández Yáñez 2021
 
 
