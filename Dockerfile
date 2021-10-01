@@ -6,16 +6,13 @@ WORKDIR /app
 # Set an env var that matches your github repo name, replace treeder/dockergo here with your repo name
 # Add the source code:
 
-ADD . /dist
+ADD /dist /app/dist
 COPY server.go /app
-
-
-
-
 
 RUN git config --global http.sslVerify false
 RUN go mod init mfy/server
-RUN go get  github.com/gin-gonic/gin
+RUN go mod tidy 
+
 # Build it:
 
 RUN go build
