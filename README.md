@@ -46,9 +46,10 @@ This script will serve thedownload libraries, and assure that no go.mod and go.s
 
 ## Running app at local environment
 
-1. Execute run_local_server.sh
+ 1. Execute this script and access http://localhost:5000
+ 
+        run_local_server.sh
 
-    access http://localhost:5000
 
 Static files from dist directory are served
 ## Build a docker image containing the app at /dist
