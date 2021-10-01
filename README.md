@@ -12,7 +12,9 @@ This project serves as scaffold to buid a dockerimage running any frontend proje
 This is a golang server for use in frontend projects. I will serve the dist directory using gin gonic library for goland in a docker container, ready to be deployed to a production environment.
 ## Golang project initializacion 
 
-1. Execute init_go_server.sh
+1. Execute 
+
+    init_go_server.sh
 
 
 This script will serve thedownload libraries, and assure that no go.mod and go.sum files exist at root level.
@@ -44,14 +46,22 @@ This script will serve thedownload libraries, and assure that no go.mod and go.s
 
 ## Running app at local environment
 
-    Execute run_local_server.sh
+1. Execute run_local_server.sh
+
     access http://localhost:5000
-    Static files from dist directory are served
+
+Static files from dist directory are served
 ## Build a docker image containing the app at /dist
 
+ 1. Execute this script and access http://localhost:5000
+
     build_docker_server.sh
-    access http://localhost:5000
+
+
 ## Execute docker image containing the app exposing at port 5000
 
+1. Execute this script and access http://localhost:5000
+
     run_docker_server.sh 
-    access http://localhost:5000
+
+
